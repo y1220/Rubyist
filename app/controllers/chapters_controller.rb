@@ -9,4 +9,8 @@ class ChaptersController < ApplicationController
   def p1_c2
 
   end
+
+  def show
+    render "/chapters/#{params[:first]}/#{params[:second]}"
+  end
 end

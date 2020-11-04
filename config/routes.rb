@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'tasks/index'
+  post 'tasks/create'
+
   get 'pages/index'
   get 'chapters/index'
   get 'people/index'
@@ -9,29 +13,17 @@ Rails.application.routes.draw do
   #[1..7].each{|x|
   #get "chapters/p1_c#{x}"
   #}
-  get 'chapters/p1_c1'
-  get 'chapters/p1_c2'
-  get 'chapters/p1_c3'
-  get 'chapters/p1_c4'
-  get 'chapters/p1_c5'
-  get 'chapters/p1_c6'
-  get 'chapters/p1_c7'
 
-  get 'chapters/p2_c8'
-  get 'chapters/p2_c9'
-  get 'chapters/p2_c10'
-  get 'chapters/p2_c11'
-  get 'chapters/p2_c12'
+  get 'chapters/:first/:second'=> "chapters#show"
 
 
-  get 'chapters/p3_c13'
-  get 'chapters/p3_c14'
-  get 'chapters/p3_c15'
-  get 'chapters/p3_c16'
 
-  get 'pages/c1_p1'
-  get 'pages/c1_p2'
-  get 'pages/c1_p3'
+
+  get 'pages/:first/:second'=> "pages#show"
+  #get 'pages/c1/p2'=> "pages#c1_p2"
+  #get 'pages/c1/p3'=> "pages#c1_p3"
+  #get 'pages/c1/p3_com'
+  #get 'pages/c1/p1'=> "pages#c2_p1"
 
   get '/' => "home#top"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

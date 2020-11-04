@@ -1,7 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
-Warning[:deprecated] = false
+#Warning[:deprecated] = false
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

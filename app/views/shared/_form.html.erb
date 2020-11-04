@@ -1,0 +1,31 @@
+<div class="form">
+  <p></p>
+  <div class="form-body">
+    <%= form_for @task, :url => {:action => "create", :controller=>"tasks"} do |f| %>
+      <p>chapter</p>
+      <%= f.select :chapter, 
+                         {'chapter1': 1, 
+                          'chapter2': 2,
+                          'chapter3': 3,
+                          'chapter4': 4,
+                          'chapter5': 5,
+                          'chapter6': 7,
+                          'chapter8': 8,
+                          'chapter9': 9,
+                          'chapter10': 10,
+                          'chapter11': 11,
+                          'chapter12': 12,
+                          'chapter13': 13,
+                          'chapter14': 14,
+                          'chapter15': 15,
+                          'chapter16': 16,
+                          }, 
+        { include_blank: 'please select'} %>
+      <p>keyword</p>
+      <%= f.text_field :keyword%>
+      <p>description</p>
+      <%= f.text_area :description%>
+      <%= f.submit%>
+    <%end%>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="main meals-show">
+  <div class="container">
+    <h2>Chapter1</h2>
+    <p>(Page3)</p>
+    <h1>Conclude this chapter with an examination of the command-line tools that ship with Ruby:</h1>
+    <div class="posts-show-item">
+      <h2>Important command-line tools</h2>
+      <h6>ruby</h6>
+      <%="The interpreter"%>
+      <h6>irb</h6>
+      <%="The interactive Ruby interpreter"%>
+      <h6>rdoc and ri</h6>
+      <%="Ruby documentation tools"%>
+      <h6>rake</h6>
+      <%="Ruby make, a task-management utility"%>
+      <h6>gem</h6>
+      <%="A Ruby library and application package-management utility"%>
+      <h6>erb</h6>
+      <%="A templating system"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Interpreter command-line switches</h2>
+      <p>When you start the Ruby interpreter from the command line, you can provide not only the name of a program file, but also one or more command-line switches, which instruct the interpreter to behave in particular ways or take particular actions.</p>
+    </div>
+    Commonly used Ruby command-line switches
+    <div class="posts-show-item">
+      <p>-c </p>
+      <h6>Checks the syntax of a program file
+        without executing the program</h6>
+      <%="ruby -c c2f.rb"%>
+      <p>-w</p>
+      <h6>Gives warning messages during program execution</h6>
+      <%="ruby -w c2f.rb"%>
+      <p>-e</p>
+      <h6>Executes the code provided in quotation marks on the command line </h6>
+      <%="ruby -e 'puts *Code demo!*'(*=quotation)"%>
+      <p>-l</p>
+      <h6>Line mode: prints a newline after every line of output</h6>
+      <%="ruby -le 'print *+ newline!*'(*=quotation)"%>
+      <p>-rname</p>
+      <h6>Requires the named feature</h6>
+      <%="ruby –rprofile"%>
+      <p>-v</p>
+      <h6>Shows Ruby version information and
+        executes the program in verbose mode</h6>
+      <%="ruby –v"%>
+      <p>--version</p>
+      <h6>Shows Ruby version information</h6>
+      <%="ruby –-version"%>
+      <p>-h</p>
+      <h6>Shows information about all command-
+        line switches for the interpreter</h6>
+      <%="ruby –h"%>
+      <p>
+        <%#= link_to("Check in detail! -> [example from a terminal]","/pages/c1_p3_com")%>
+        <%= link_to "Check in detail! -> [example from a terminal]",pages_c1_p3_com_path%>
+      </p>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>A closer look at interactive Ruby interpretation with irb
+      </h2>
+      <p>--simple-prompt</p>
+      <h6>keep irb ’s output shorter</h6>
+      <%="$ irb --simple-prompt"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2></h2>
+      <p></p>
+      <h6></h6>
+      <%=""%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <p>title</p>
+      <%= "description"%>
+    </div>
+  </div>
+</div>

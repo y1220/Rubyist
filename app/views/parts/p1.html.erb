@@ -1,0 +1,13 @@
+<div class="main posts-index">
+  <div class="container">
+    <h2>Part1</h2>
+    <p>Ruby fundations :)</p>
+    <%cnt=1%>
+    <% @chapters1.each do |chapter|%>
+      <div class="posts-index-item">
+        <%= link_to(chapter,"/chapters/p1_c#{cnt}")%>
+        <%cnt+= 1%>
+      </div>
+    <% end%>
+  </div>
+</div>

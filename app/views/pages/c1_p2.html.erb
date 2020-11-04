@@ -1,0 +1,115 @@
+<div class="main meals-show">
+  <div class="container">
+    <h2>Chapter1</h2>
+    <p>(Page2)</p>
+    <h1>Adding extensions of your own:</h1>
+    <div class="posts-show-item">
+      <h2>rbconfig</h2>
+      <p>rbconfig is an interface to a lot of compiled-in configuration information about your Ruby installation, and you can get irb to load it by using irb ’s -r command-line flag and the name of the package:</p>
+      <img class="img2" src="/RbConfig.png">
+      <img class="img3" src="/r_dir.png">
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Ruby gems</h2>
+      <p>The RubyGems utility is the standard way to package and distribute Ruby libraries.
+        During a Ruby installation, several gems (as the packages are called) are installed for you:</p>
+      <%="*examples: did_you_mean,minitest
+         ,net-telnet
+         ,power_assert
+         ,rake
+         ,rdoc
+         ,test-unit
+         ,xmlrpc"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Ruby version managers—RVM, rbenv, and chruby</h2>
+      <p>Libraries and tools are still available for your use,
+        but they may reside in the gem directory or bindir of a different Ruby version on your machine.</p>
+      <h6></h6>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Standard library(extensions)</h2>
+      <p>Includes extensions for a wide variety of projects and
+        tasks</p>
+      <h6>database management</h6>
+      <h6>networking</h6>
+      <h6>specialized mathematics</h6>
+      <h6>XML processing</h6>
+      <%="*With every new release of Ruby little change arrises. But most of the more widely used libraries tend to stay, once they’ve proven their worth. The key to using extensions and librar"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>require, load</h2>
+      <p>These methods allow you to load extensions at runtime, including extensions you write yourself.</p>
+      <%="*Encapsulation helps you to find the position of error especially when you have long code, it is useful"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>load</h2>
+      <p>When it encounters the load method call, Ruby reads in the second file.</p>
+    </div>
+    see the example
+    <div class="posts-show-item">
+      <h2>loaddemo.rb</h2>
+      <h6>puts "This is the first (master) program file."</h6>
+      <h6>load "loadee.rb"</h6>
+      <h6>puts "And back again to the first file."</h6>
+    </div>
+    The two files should be in the same directory (presumably your sample code directory).
+    <div class="posts-show-item">
+      <h2>loadee.rb</h2>
+      <h6>puts "> This is the second file."</h6>
+    </div>
+    run loaddemo.rb from the command line
+    <div class="posts-show-item">
+      <h2>Output</h2>
+      <h6>This is the first (master) program file.</h6>
+      <h6>> This is the second file.</h6>
+      <h6>And back again to the first file.</h6>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Select the position to read 'load'</h2>
+      <p>You can navigate relative directories in your load commands with the conventional double-dot “directory up” symbol:</p>
+      <h6>>load "../extras.rb"</h6>
+    </div>
+    You can also force load to find a file, regardless of the contents of the load path, by giving it the fully qualified path to the file:
+    <div class="posts-show-item">
+      <h2>load "/home/users/dblack/book/code/loadee.rb"</h2>
+      <p>You can navigate relative directories in your load commands with the conventional double-dot “directory up” symbol:</p>
+      <h6>>load "../extras.rb"</h6>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Select the position to read 'load'</h2>
+      <p>You can navigate relative directories in your load commands with the conventional double-dot “directory up” symbol:</p>
+      <h6>>load "../extras.rb"</h6>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>require "/home/users/dblack/book/code/loadee"</h2>
+      <p>Although load is useful, particularly when you want to load a file more than once,
+        require is the day-to-day technique you’ll use to load Ruby extensions and libraries standard and otherwise.</p>
+      <p>@By using irb</p>
+      <h6>>> require "scanf"</h6>
+      <h6>=> true</h6>
+      <h6>>> "David Black".scanf("%s%s")</h6>
+      <h6>=> ["David", "Black"]</h6>
+      <%="*Did you mean? will let you know when we don't have gem we need"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>require_relative "loadee"</h2>
+      <p>
+        Without manipulating the load path to include the current directory.</p>
+    </div>
+    Navigate a local directory hierarchy,
+    <div class="posts-show-item">
+      <h2>require_relative "lib/music/sonata"</h2>
+      <p>There’s a third way to load files: require_relative . This command loads features by searching relative to the directory in which the file from which it’s called resides.</p>
+    </div>
+  </div>
+</div>

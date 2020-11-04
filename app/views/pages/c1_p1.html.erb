@@ -1,0 +1,98 @@
+<div class="main meals-show">
+  <div class="container">
+    <h2>Chapter1</h2>
+    <p>(Page1)</p>
+    <h1>Design principles, syntax, and semantics:</h1>
+    <div class="posts-show-item">
+      <h2>The interactive Ruby console program (irb)</h2>
+      <img class="about-img" src="/irb2.png">
+      <%= "*Useful to check instantly when we have any doubts"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Type    : Name</h2>
+      <p>Local   : first_name</p>
+      <p>Instance: @first_name</p>
+      <%="*Although a local variable can’t start with an uppercase letter, an instance variable can have one in the first
+      position after the at-sign" %>
+      <p>Class   : @@first_name</p>
+      <p>Global  : $FIRST_NAME</p>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>x = "100".to_i</h2>
+      <p>x = "100".to_i(9) -> 81</p>
+      <%="*Calling to_i on 100 with an argument of 9 generates a decimal integer equivalent to the base-9 number 100: 
+        x is now equal to 81 decimal."%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>String object = Instance of Class String</h2>
+      <p> Object </p>
+      <%="Object can change, acquiring methods and behaviors that weren’t defined in their class. The ability of objects to adopt behaviors that their class didn’t give them is one of
+the most central defining principles of the design of Ruby as a language."%>
+      <p> Class </p>
+      <%="The class is responsible for launching the object into existence, a process known as instantiation, but thereafter
+        the object has a life of its own."%>
+      <%="" %>
+      <%="" %>
+      <p></p>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>$ ruby -cw example.rb</h2>
+      <p>The Ruby interpreter can check programs for syntax errors without running the programs. It reads through the file and tells you whether the syntax is okay.</p>
+      <%="*Assuming you’ve typed the file correctly, you should see the message"%>
+      <p>Syntax OK</p>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>puts answer</h2>
+      <p>print answer, "\n"</p>
+      <%="*You almost never have to do this, though, because puts adds a newline for you"%>
+      <p>Syntax OK</p>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Keyboard input</h2>
+      <h6>print "Hello. Please enter a Celsius value: "</h6>
+      <h1>celsius = gets</h1>
+      <h6>fahrenheit = (celsius.to_i * 9 / 5) + 32</h6>
+      <h6>print "The Fahrenheit equivalent is "</h6>
+      <h6>print fahrenheit</h6>
+      <h6>puts "."</h6>
+      <%="*gets (get a line of keyboard input) and to_i (convert to an integer)"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>$ ruby c2fi.rb</h2>
+      <h6>Hello. Please enter a Celsius value: 100 </h6>
+      <h6>The Fahrenheit equivalent is 212.</h6>
+      <%="*result of the code above"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Read from a FILE</h2>
+      <p>First, create a new file called temp.dat (temperature data), containing one line with one number on it: 100</p>
+      <h6>puts "Reading Celsius temperature value from data file..."</h6>
+      <h6>  num = File.read("temp.dat")</h6>
+      <h6>  celsius = num.to_i</h6>
+      <p>$ ruby c2fin.rb</p>
+      <%="*read a file and see the result in console"%>
+    </div>
+    <%=@str%>
+    <div class="posts-show-item">
+      <h2>Write to a FILE</h2>
+      <p>the main extra step when you write to a file is specifying a file mode—in this case, w (for write). Save the version of
+        the program from this listing to c2fout.rb, and run it.</p>
+      <h6>print "Hello. Please enter a Celsius value: "</h6>
+      <h6>celsius = gets.to_i</h6>
+      <h6>fahrenheit = (celsius * 9 / 5) + 32</h6>
+      <h6>puts "Saving result to output file 'temp.out'"</h6>
+      <h1>fh = File.new("temp.out", "w")</h1>
+      <h6>fh.puts fahrenheit</h6>
+      <h1>fh.close</h1>
+    </div>
+    <%=@str%>
+  </div>
+</div>

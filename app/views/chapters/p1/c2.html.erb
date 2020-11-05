@@ -1,18 +1,1 @@
-<div class="main top-main">
-  <div class="top-message">
-    <h2>Part1</h2>
-    <p>Chapter2 :)</p>
-    <div class="posts-show-item">
-      <p>1. Core language:</p>
-      <%= link_to("design principles, syntax, and semantics","/pages/c2/p1")%>
-    </div>
-    <div class="posts-show-item">
-      <p>2. Extensions and libraries:</p>
-      <%= link_to("adding extensions of your own","/pages/c1_p2")%>
-    </div>
-    <div class="posts-show-item">
-      <p>3. Command-line tools</p>
-      <%= link_to("run the interpreter and some other important utilities","/pages/c1_p3")%>
-    </div>
-  </div>
-</div>
+<%= render partial: 'shared/chapter', :locals => {:cid => 2, :pid => 1}%>

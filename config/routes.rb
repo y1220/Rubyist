@@ -1,11 +1,26 @@
 Rails.application.routes.draw do
 
+
+  get 'content_types/index'
+  get 'contents/index'
+  get 'contents/:box_id/new' => "contents#new"
+  post 'contents/:box_id/create' => "contents#create"
+
+  #get 'contents/:box_id/new'
+  #get 'boxes/index'
   get 'tasks/index'
   post 'tasks/create'
+  get 'tasks/todo'
+  post "tasks/:id/destroy" => "tasks#destroy"
+
+  post 'dones/:task_id/index' => "dones#index"
+  post "dones/:task_id/destroy" => "dones#destroy"
+  #resources :pages
+  resources :boxes
 
   get 'pages/index'
   get 'chapters/index'
-  get 'people/index'
+
   get 'parts/index'
   get 'parts/p1'
   get 'parts/p2'

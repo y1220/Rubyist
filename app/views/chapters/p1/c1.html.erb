@@ -1,18 +1,1 @@
-<div class="main meals-show">
-  <div class="container">
-    <h2>Part1</h2>
-    <p>Chapter1 :)</p>
-    <div class="posts-show-item">
-      <p>1. Core language:</p>
-      <%= link_to("design principles, syntax, and semantics","/pages/c1/p1")%>
-    </div>
-    <div class="posts-show-item">
-      <p>2. Extensions and libraries:</p>
-      <%= link_to("adding extensions of your own","/pages/c1/p2")%>
-    </div>
-    <div class="posts-show-item">
-      <p>3. Command-line tools</p>
-      <%= link_to("run the interpreter and some other important utilities","/pages/c1/p3")%>
-    </div>
-  </div>
-</div>
+<%= render partial: 'shared/chapter', :locals => {:cid => 1, :pid => 1}%>

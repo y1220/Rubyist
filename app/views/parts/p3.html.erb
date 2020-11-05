@@ -5,7 +5,7 @@
     <%cnt=13%>
     <% @chapters3.each do |chapter|%>
       <div class="posts-index-item">
-        <%= link_to(chapter,"/chapters/p3/c#{cnt}")%>
+        <%= link_to("chapter#{cnt.to_s}: #{chapter.name}","/chapters/p3/c#{cnt.to_i}")%>
         <%cnt+= 1%>
       </div>
     <% end%>

@@ -1,0 +1,32 @@
+<div class="main posts-index">
+  <div class="container">
+    <h2>TODO</h2>
+    <p>My questions :)</p>
+    <% @tasks.each do |task|%>
+      <div class="posts-index-item">
+        <div class="reply">
+          <%="chapter: "%><em> <%=task.chapter%></em>
+          <%= link_to("[delete]", "/tasks/#{task.id}/destroy",{method:"post"}) %>
+        </div>
+        <h6><%=task.keyword%></h6>
+        <em> <%=task.description%></em>
+        <%#= link_to(,"/chapters/p1/c#{cnt}")%>
+        <div class="reply">
+          <%if !task.done%>
+            <%= link_to("/dones/#{task.id}/index",{method: "post"})do %>
+              <span class="fa fa-heart like-btn"></span>
+            <% end %>
+          <%else%>
+            <%= link_to("/dones/#{task.id}/destroy",{method: "post"})do %>
+              <span class="fa fa-heart like-btn-unlike"></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end%>
+    <div class="container">
+      <h1 class="users-heading">New summary</h1>
+      <%= render "shared/new_summary"%>
+    </div>
+  </div>
+</div>

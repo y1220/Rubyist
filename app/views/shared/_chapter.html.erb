@@ -1,0 +1,18 @@
+<div class="main meals-show">
+  <div class="container">
+    <h2>Part<%= pid %></h2>
+    <p>Chapter<%=cid%> :)</p>
+    <div class="posts-show-item">
+      <% Page.all.where(chapter_id: cid).each do |page|%>
+        <div class="posts-index-item">
+          <p><%="#{page.name}"%></p>
+          <%= link_to("#{page.intro}","/pages/c#{cid.to_s}/p#{page.id.to_s}")%>
+        </div>
+      <% end%>
+    </div>
+    <div class="container">
+      <h1 class="users-heading">New summary</h1>
+      <%= render "shared/new_summary"%>
+    </div>
+  </div>
+</div>

@@ -10,9 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_04_144947) do
+ActiveRecord::Schema.define(version: 2020_11_05_144407) do
 
-  create_table "people", force: :cascade do |t|
+  create_table "boxes", force: :cascade do |t|
+    t.string "title"
+    t.integer "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_boxes_on_page_id"
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.string "name"
+    t.integer "part_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "intro"
+    t.index ["part_id"], name: "index_chapters_on_part_id"
+  end
+
+  create_table "content_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.integer "type"
+    t.text "text"
+    t.integer "box_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_contents_on_box_id"
+  end
+
+  create_table "dones", force: :cascade do |t|
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_dones_on_task_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "name"
+    t.integer "chapter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "intro"
+    t.index ["chapter_id"], name: "index_pages_on_chapter_id"
+  end
+
+  create_table "parts", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,15 +2,11 @@ class ChaptersController < ApplicationController
   def index
   end
 
-  def p1_c1
 
-  end
-
-  def p1_c2
-
-  end
 
   def show
+    @box= Box.new
+    #@pages= Page.all
     render "/chapters/#{params[:first]}/#{params[:second]}"
   end
 end

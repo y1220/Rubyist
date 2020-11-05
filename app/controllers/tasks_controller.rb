@@ -12,15 +12,26 @@ class TasksController < ApplicationController
     #@task= params.require(:task).permit(:chapter,:keyword,:description)
     #@task.keyword= params.require(:task).permit(:keyword)
     #@task.description= params.require(:task).permit(:description)
-    byebug
+    #byebug
     if @task.save
       flash[:notice]= "New task has been created successfully!}"
-      redirect_to("/people/index")
+      redirect_to("/parts/index")
 
     else
       show_error("Some error occured unfortunately..try again!",'/tasks/index')
     end
 
+  end
+
+  def todo
+    @tasks = Task.all
+    @box= Box.new
+  end
+
+  def destroy
+    @task = Task.find_by(id: params[:id])
+    @task.destroy
+    redirect_to("/tasks/todo")
   end
 
   private  ## has to be the bottom of the page not to let other method as private one

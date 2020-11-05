@@ -2,6 +2,7 @@
   <p></p>
   <div class="form-body">
     <%= form_for @task, :url => {:action => "create", :controller=>"tasks"} do |f| %>
+      <h2>Question</h2>
       <p>chapter</p>
       <%= f.select :chapter, 
                          {'chapter1': 1, 

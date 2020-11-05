@@ -1,0 +1,14 @@
+<div class="form">
+  <p></p>
+  <div class="form-body">
+    <%= form_for @content, :url => {:action => "create", :controller=>"contents"} do |f| %>
+      <p>type</p>
+      <%= f.select(:type, ContentType.all.map{|t|t.name}, 
+      { include_blank: 'please select'}, 
+      { :class => 'choose_the_content_type' }) %>
+      <p>text</p>
+      <%= f.text_field :text%>
+      <%= f.submit%>
+    <%end%>
+  </div>
+</div>

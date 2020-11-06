@@ -111,5 +111,13 @@
       <h2>require_relative "lib/music/sonata"</h2>
       <p>There’s a third way to load files: require_relative . This command loads features by searching relative to the directory in which the file from which it’s called resides.</p>
     </div>
+    <%=@str%>
+    <%@boxes= Box.where(page_id: 2)%>
+    <% @boxes.each do |box|%>
+      <div class="posts-show-item">
+        <%= render partial: 'shared/box', :locals => {:bid => box.id}%>
+      </div>
+      <%=@str%>
+    <% end%>
   </div>
 </div>

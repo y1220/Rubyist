@@ -2,6 +2,9 @@
   <div class="container">
     <h1 class="users-heading">Add content</h1>
     <em>title: </em><%=Box.find_by(id: @contents.first.box_id).title%>
+    <div class="reply">
+      <em>page: </em><%=Box.find_by(id: @contents.first.box_id).page_id%>
+    </div>
     <% @contents.each do |content|%>
       <div>
         <%= content.line%>

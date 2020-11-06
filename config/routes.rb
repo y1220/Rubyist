@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  get 'images/index'
+  get 'images/:box_id/new' => "images#new"
+  post 'images/:box_id/create' => "images#create"
   get 'content_types/index'
   get 'contents/index'
   get 'contents/:box_id/new' => "contents#new"

@@ -1,0 +1,16 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="users-heading">Add image</h1>
+    <em>title: </em><%=Box.find_by(id: params[:box_id]).title%>
+    <div class="form">
+      <p></p>
+      <div class="form-body">
+        <%= form_for @image, :url => {:action => "create", :controller=>"images"} do |f| %>
+          <p>image(optional: choose image file(jpg, jpeg, png))</p>
+          <%= f.file_field :pic, accept: 'image/*'%>
+          <%= f.submit%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

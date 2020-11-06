@@ -94,5 +94,12 @@ the most central defining principles of the design of Ruby as a language."%>
       <h1>fh.close</h1>
     </div>
     <%=@str%>
+    <%@boxes= Box.where(page_id: 1)%>
+    <% @boxes.each do |box|%>
+      <div class="posts-show-item">
+        <%= render partial: 'shared/box', :locals => {:bid => box.id}%>
+      </div>
+      <%=@str%>
+    <% end%>
   </div>
 </div>

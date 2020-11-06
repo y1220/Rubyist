@@ -8,6 +8,9 @@
     </div>
     <% @contents.each do |content|%>
       <div>
+        <%= link_to("/contents/#{content.id}/destroy",{method: "post"})do %>
+          <i class="fa fa-minus-circle"></i>
+        <% end %>
         <%= content.line%>
         <div class="reply">
           <%= ContentType.find_by(id: content.content_type).name %>

@@ -38,12 +38,23 @@ class ContentsController < ApplicationController
     @content.content_type= ContentType.find_by(name: params.require(:content).permit(:line,:content_type,:box_id)[:content_type]).id
     #byebug
     if @content.save
-      flash[:notice]= "New box has been created, insert the content!}"
+      flash[:notice]= "New box has been created, insert the content!"
       redirect_to("/contents/#{@content.id}/edit")
     else
       show_error("Some error occured unfortunately..try again!",'/tasks/index')
     end
 
+  end
+  def destroy
+    @content = Content.find_by(id: params[:content_id])
+    bid=@content.box_id
+    if @content.destroy
+      flash[:notice]= "deleted!"
+      content2 = Content.where(box_id: bid).last
+      redirect_to("/contents/#{content2.id}/edit")
+    else
+      show_error("Some error occured!", "/contents/#{@content.id}/edit")
+    end
   end
 
   private  ## has to be the bottom of the page not to let other method as private one

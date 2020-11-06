@@ -28,17 +28,22 @@ class TasksController < ApplicationController
     @box= Box.new
   end
 
-  def destroy
-    @task = Task.find_by(id: params[:id])
-    @task.destroy
-    redirect_to("/tasks/todo")
+  def do
+      @tasks = Task.all
+      @box= Box.new
+    end
+
+    def destroy
+      @task = Task.find_by(id: params[:id])
+      @task.destroy
+      redirect_to("/tasks/todo")
+    end
+
+    private  ## has to be the bottom of the page not to let other method as private one
+    def show_error (error_message, return_to_address)
+      flash[:notice]= error_message
+      render(return_to_address)
+    end
+
+
   end
-
-  private  ## has to be the bottom of the page not to let other method as private one
-  def show_error (error_message, return_to_address)
-    flash[:notice]= error_message
-    render(return_to_address)
-  end
-
-
-end

@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   post 'contents/:box_id/create' => "contents#create"
   get 'contents/:content_id/edit' => "contents#edit"
   post 'contents/:content_id/update' => "contents#update"
+  post 'contents/:content_id/destroy' => "contents#destroy"
 
   #get 'contents/:box_id/new'
   #get 'boxes/index'
   get 'tasks/index'
   post 'tasks/create'
   get 'tasks/todo'
+  get "tasks/:task_id/do" => "tasks#do"
   post "tasks/:id/destroy" => "tasks#destroy"
 
   post 'dones/:task_id/index' => "dones#index"

@@ -1,0 +1,9 @@
+<div class="main posts-index">
+  <div class="container">
+    <%task= Task.find_by(id: params[:task_id])%>
+    <%#= link_to(,"/chapters/p1/c#{cnt}")%>
+    <%chapter= Chapter.find_by(id: task.chapter)%>
+    <%= render partial: 'shared/mini_chapter', :locals => {:task_id=> task.id,
+    :cid => task.chapter, :pid => chapter.part_id}%>
+  </div>
+</div>

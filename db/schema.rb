@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_05_144407) do
+ActiveRecord::Schema.define(version: 2020_11_06_080109) do
 
   create_table "boxes", force: :cascade do |t|
     t.string "title"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2020_11_05_144407) do
   end
 
   create_table "contents", force: :cascade do |t|
-    t.integer "type"
-    t.text "text"
+    t.integer "content_type"
+    t.text "line"
     t.integer "box_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

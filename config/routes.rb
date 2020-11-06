@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'contents/index'
   get 'contents/:box_id/new' => "contents#new"
   post 'contents/:box_id/create' => "contents#create"
+  get 'contents/:content_id/edit' => "contents#edit"
+  post 'contents/:content_id/update' => "contents#update"
 
   #get 'contents/:box_id/new'
   #get 'boxes/index'

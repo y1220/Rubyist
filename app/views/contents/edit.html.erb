@@ -1,7 +1,15 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="users-heading">Add content</h1>
-    <%=@content2.line%>
+    <em>title: </em><%=Box.find_by(id: @contents.first.box_id).title%>
+    <% @contents.each do |content|%>
+      <div>
+        <%= content.line%>
+        <div class="reply">
+          <%= ContentType.find_by(id: content.content_type).name %>
+        </div>
+      </div>
+    <% end%>
     <%= render "shared/edit_content"%>
   </div>
 </div>

@@ -14,11 +14,10 @@ class ContentsController < ApplicationController
     @content.box_id= params[:box_id]
     # to search type it was necessary to register the value one by one
     @content.content_type= ContentType.find_by(name: params.require(:content).permit(:line,:content_type,:box_id)[:content_type]).id
-    byebug
+    #byebug
     if @content.save
       flash[:notice]= "New box has been created, insert the content!}"
       redirect_to("/contents/#{@content.id}/edit")
-
     else
       show_error("Some error occured unfortunately..try again!",'/tasks/todo')
     end
@@ -27,19 +26,20 @@ class ContentsController < ApplicationController
 
   def edit
     @content2 = Content.find_by(id: params[:content_id])
+    @contents= Content.where(box_id: Content.find_by(id: params[:content_id]).box_id)
     @content = Content.new
-
   end
 
   def update
-    @content = Content.find(id: params[:id])
-    @content_type= Content_type.find(name: params[:content_type])
-    @content2 = Content.new(params.require(:content).permit(:type,:line,:box_id))
-
-    if @content2.save
+    @tasks = Task.all
+    @content = Content.new
+    @content.line= params.require(:content).permit(:line,:content_type,:box_id)[:line]
+    @content.box_id= Content.find_by(id: params[:content_id]).box_id
+    @content.content_type= ContentType.find_by(name: params.require(:content).permit(:line,:content_type,:box_id)[:content_type]).id
+    #byebug
+    if @content.save
       flash[:notice]= "New box has been created, insert the content!}"
-      redirect_to("/parts/index")
-
+      redirect_to("/contents/#{@content.id}/edit")
     else
       show_error("Some error occured unfortunately..try again!",'/tasks/index')
     end

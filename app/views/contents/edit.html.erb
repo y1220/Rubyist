@@ -1,9 +1,10 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="users-heading">Add content</h1>
-    <em>title: </em><%=Box.find_by(id: @contents.first.box_id).title%>
+    <%box=Box.find_by(id: @contents.first.box_id)%>
+    <em>title: </em><%=box.title%>
     <div class="reply">
-      <em>page: </em><%=Box.find_by(id: @contents.first.box_id).page_id%>
+      <em>page: </em><%=box.page_id%>
     </div>
     <% @contents.each do |content|%>
       <div>
@@ -14,5 +15,8 @@
       </div>
     <% end%>
     <%= render "shared/edit_content"%>
+    <div class="button">
+      <%= link_to("Finished","/pages/c#{box.page.chapter_id}/p#{box.page_id}")%>
+    </div>
   </div>
 </div>

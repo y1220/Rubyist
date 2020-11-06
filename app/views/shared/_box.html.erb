@@ -1,6 +1,6 @@
 <%@contents= Content.where(box_id: bid)%>
 <div class="reply">
-  <%="box_id: "%><em> <%=bid%></em>
+  <%="box_id: "%><em><%= link_to(bid,"/contents/#{@contents.last.id}/edit")%></em>
 </div>
 <h2><%=Box.find_by(id: @contents.first.box_id).title%></h2>
 <% @contents.each do |content|%>
@@ -14,6 +14,11 @@
     <h1><%= content.line%></h1>
   <%end%>
 <% end%>
-<div class="reply">
-  <%= link_to("[Add image]","/images/#{bid}/new")%>
+<div >
+  <%if Image.where(box_id: bid).present?%>
+    <%@address= "/images/b"+bid.to_s+".png"%>
+    <img class="about-img" src="<%=@address%>">
+  <%else%>
+    <%= link_to("[Add image]","/images/#{bid}/new")%>
+  <%end%>
 </div>

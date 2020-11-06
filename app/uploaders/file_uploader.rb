@@ -19,7 +19,7 @@ class FileUploader < CarrierWave::Uploader::Base
 
   def filename
     #File.basename(path)
-    "p#{model.box_id}.jpg"
+    "b#{model.box_id}.png"
   end
 
 

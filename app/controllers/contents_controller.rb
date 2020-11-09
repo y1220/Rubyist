@@ -16,7 +16,7 @@ class ContentsController < ApplicationController
     @content.content_type= ContentType.find_by(name: params.require(:content).permit(:line,:content_type,:box_id)[:content_type]).id
     #byebug
     if @content.save
-      flash[:notice]= "New box has been created, insert the content!}"
+      flash[:notice]= "New box has been created, insert the content!"
       redirect_to("/contents/#{@content.id}/edit")
     else
       show_error("Some error occured unfortunately..try again!",'/tasks/todo')
@@ -48,10 +48,26 @@ class ContentsController < ApplicationController
   def destroy
     @content = Content.find_by(id: params[:content_id])
     bid=@content.box_id
+
     if @content.destroy
-      flash[:notice]= "deleted!"
-      content2 = Content.where(box_id: bid).last
-      redirect_to("/contents/#{content2.id}/edit")
+      @last = Content.find_by(box_id: bid)
+      byebug
+      if @last.nil?
+        @box= Box.find_by(id: bid)
+        pid= @box.page_id
+        @image = Image.find_by(box_id: bid)
+        if @image
+          @image.destroy #if @image
+        end
+        @box.destroy
+        flash[:notice]= "deleted!"
+        page = Page.find_by(id: pid)
+        redirect_to("/pages/c#{page.chapter_id}/p#{page.id}")
+      else
+        flash[:notice]= "deleted!"
+        content2 = Content.where(box_id: bid).last
+        redirect_to("/contents/#{content2.id}/edit")
+      end
     else
       show_error("Some error occured!", "/contents/#{@content.id}/edit")
     end

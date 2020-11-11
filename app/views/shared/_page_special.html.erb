@@ -1,0 +1,15 @@
+<%#if ![1, 2, 3].include?(pid)%>
+<%#h1><%= Page.find_by(id: pid).name%><%#/h1>
+<%#end%>
+<%#@boxes= Box.where(page_id: pid)%>
+<% @boxes.each do |box|%>
+  <div class="posts-show-item">
+    <%= render partial: 'shared/box', :locals => {:bid => box.id}%>
+  </div>
+  <%=@str%>
+<% end%>
+</div>
+<div class="container2">
+  <h1 class="users-heading">New summary</h1>
+  <%= render partial: 'shared/new_summary_with_page', :locals => {:pid => pid}%>
+</div>

@@ -1,0 +1,12 @@
+<div class="form">
+  <p></p>
+  <div class="form-body">
+    <%= form_for @box, :url => {:action => "create", :controller=>"boxes"} do |f| %>
+      <p>title</p>
+      <%= f.text_field :title%>
+      <p>page_id</p>
+      <%= f.text_field :page_id, value: pid %>
+      <%= f.submit%>
+    <%end%>
+  </div>
+</div>

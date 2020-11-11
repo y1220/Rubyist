@@ -51,12 +51,15 @@ class ContentsController < ApplicationController
 
     if @content.destroy
       @last = Content.find_by(box_id: bid)
-      byebug
+      #byebug
       if @last.nil?
         @box= Box.find_by(id: bid)
         pid= @box.page_id
         @image = Image.find_by(box_id: bid)
+
         if @image
+          @image.remove_pic!
+          @image.save!
           @image.destroy #if @image
         end
         @box.destroy

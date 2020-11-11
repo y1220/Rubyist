@@ -14,13 +14,13 @@
       <h2>Ruby gems</h2>
       <p>The RubyGems utility is the standard way to package and distribute Ruby libraries.
         During a Ruby installation, several gems (as the packages are called) are installed for you:</p>
-      <%="*examples: did_you_mean,minitest
-         ,net-telnet
-         ,power_assert
-         ,rake
-         ,rdoc
-         ,test-unit
-         ,xmlrpc"%>
+      <%="*examples: did_you_mean,minitest,
+            net-telnet,
+            power_assert,
+            rake,
+            rdoc,
+            test-unit,
+            xmlrpc"%>
     </div>
     <%=@str%>
     <div class="posts-show-item">
@@ -112,12 +112,7 @@
       <p>There’s a third way to load files: require_relative . This command loads features by searching relative to the directory in which the file from which it’s called resides.</p>
     </div>
     <%=@str%>
-    <%@boxes= Box.where(page_id: 2)%>
-    <% @boxes.each do |box|%>
-      <div class="posts-show-item">
-        <%= render partial: 'shared/box', :locals => {:bid => box.id}%>
-      </div>
-      <%=@str%>
-    <% end%>
+    <%= render partial: 'shared/page_special', :locals => {:cid => 1,
+:pid => 2}%>
   </div>
 </div>

@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'pages/:first/:second'=> "pages#show"
   #get 'pages/c1/p2'=> "pages#c1_p2"
   #get 'pages/c1/p3'=> "pages#c1_p3"
-  #get 'pages/c1/p3_com'
+  get 'pages/c1/p3_com'=> "pages#show"
   #get 'pages/c1/p1'=> "pages#c2_p1"
 
   get '/' => "home#top"

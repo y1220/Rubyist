@@ -66,16 +66,7 @@
       <%="$ irb --simple-prompt"%>
     </div>
     <%=@str%>
-    <div class="posts-show-item">
-      <h2></h2>
-      <p></p>
-      <h6></h6>
-      <%=""%>
-    </div>
-    <%=@str%>
-    <div class="posts-show-item">
-      <p>title</p>
-      <%= "description"%>
-    </div>
+    <%= render partial: 'shared/page_special', :locals => {:cid => 1,
+:pid => 3}%>
   </div>
 </div>

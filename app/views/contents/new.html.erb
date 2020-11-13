@@ -1,6 +1,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="users-heading">New content</h1>
+    <em>title: </em><%=Box.find_by(id: params[:box_id]).title%>
     <%= render "shared/new_content"%>
   </div>
 </div>

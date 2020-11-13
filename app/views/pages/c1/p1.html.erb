@@ -1,4 +1,4 @@
-<div class="main meals-show">
+<div class="main posts-show">
   <div class="container">
     <h2>Chapter1</h2>
     <p>(Page1)</p>
@@ -29,8 +29,7 @@
     <div class="posts-show-item">
       <h2>String object = Instance of Class String</h2>
       <p> Object </p>
-      <%="Object can change, acquiring methods and behaviors that weren’t defined in their class. The ability of objects to adopt behaviors that their class didn’t give them is one of
-the most central defining principles of the design of Ruby as a language."%>
+      <%="Object can change, acquiring methods and behaviors that weren’t defined in their class. The ability of objects to adopt behaviors that their class didn’t give them is one of the most central defining principles of the design of Ruby as a language."%>
       <p> Class </p>
       <%="The class is responsible for launching the object into existence, a process known as instantiation, but thereafter
         the object has a life of its own."%>
@@ -94,5 +93,7 @@ the most central defining principles of the design of Ruby as a language."%>
       <h1>fh.close</h1>
     </div>
     <%=@str%>
+    <%= render partial: 'shared/page_special', :locals => {:cid => 1,
+:pid => 1}%>
   </div>
 </div>

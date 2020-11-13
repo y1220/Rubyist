@@ -1,7 +1,25 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="users-heading">Add content</h1>
-    <%=@content2.line%>
+    <%box=Box.find_by(id: @contents.first.box_id)%>
+    <em>title: </em><%=box.title%>
+    <div class="reply">
+      <em>page: </em><%=box.page_id%>
+    </div>
+    <% @contents.each do |content|%>
+      <div>
+        <%= link_to("/contents/#{content.id}/destroy",{method: "post"})do %>
+          <i class="fa fa-minus-circle"></i>
+        <% end %>
+        <%= content.line%>
+        <div class="reply">
+          <%= ContentType.find_by(id: content.content_type).name %>
+        </div>
+      </div>
+    <% end%>
     <%= render "shared/edit_content"%>
+    <div class="button">
+      <%= link_to("Finished","/pages/c#{box.page.chapter_id}/p#{box.page_id}")%>
+    </div>
   </div>
 </div>

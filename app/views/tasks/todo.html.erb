@@ -5,8 +5,9 @@
     <% @tasks.each do |task|%>
       <div class="posts-index-item">
         <div class="reply">
-          <%="chapter: "%><em> <%=task.chapter%></em>
-          <%= link_to("[delete]", "/tasks/#{task.id}/destroy",{method:"post"}) %>
+          <%= link_to("[chapter#{task.chapter}]", "/tasks/#{task.id}/do") %>
+          <%= link_to("[delete]", "/tasks/#{task.id}/destroy",
+          {method:"post"}) %>
         </div>
         <h6><%=task.keyword%></h6>
         <em> <%=task.description%></em>
@@ -23,7 +24,7 @@
           <% end %>
         </div>
       </div>
-    <% end%>
+    <%end%>
     <div class="container">
       <h1 class="users-heading">New summary</h1>
       <%= render "shared/new_summary"%>

@@ -71,6 +71,13 @@ body {
   clear: both;
 }
 
+.container2 {
+  max-width: 1300px;
+ margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* ヘッダー ================================ */
 header {
   height: 64px;
@@ -138,8 +145,7 @@ header {
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
-  /* 背景画像のCSSを追加してください */
-  background-image: url("/cat.png");
+  background-image: url("/Rubybird.png");
 }
 
 .top-message {
@@ -249,4 +255,18 @@ header {
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
+}
+
+.button {
+    background-color: #F08080;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 200px;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    float: left;
+    box-shadow: 0 2px 6px #c1ced7;
+    text-align: center;
 }

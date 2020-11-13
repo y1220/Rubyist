@@ -1,0 +1,24 @@
+<%@contents= Content.where(box_id: bid)%>
+<div class="reply">
+  <%="box_id: "%><em><%= link_to(bid,"/contents/#{@contents.last.id}/edit")%></em>
+</div>
+<h2><%=Box.find_by(id: @contents.first.box_id).title%></h2>
+<% @contents.each do |content|%>
+  <%if content.content_type == 1%>
+    <h6><%= content.line%></h6>
+  <%elsif content.content_type == 2%>
+    <p><%= content.line%></p>
+  <%elsif content.content_type == 3%>
+    <%= content.line%>
+  <%elsif content.content_type == 4%>
+    <h1><%= content.line%></h1>
+  <%end%>
+<% end%>
+<div >
+  <%if Image.where(box_id: bid).present?%>
+    <%@address= "/images/b"+bid.to_s+".png"%>
+    <img class="about-img" src="<%=@address%>">
+  <%else%>
+    <%= link_to("[Add image]","/images/#{bid}/new")%>
+  <%end%>
+</div>

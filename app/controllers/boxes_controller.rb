@@ -15,7 +15,7 @@ class BoxesController < ApplicationController
     #@task.description= params.require(:task).permit(:description)
     #byebug
     if @box.save
-      flash[:notice]= "New box has been created, insert the content!}"
+      flash[:notice]= "New box has been created, insert the content!"
       redirect_to("/contents/#{@box.id}/new")
 
     else

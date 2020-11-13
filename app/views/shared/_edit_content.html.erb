@@ -1,13 +1,14 @@
 <div class="form">
   <p></p>
   <div class="form-body">
-    <%= form_for @content, :url => {:action => "edit", :controller=>"contents"} do |f| %>
+    <%= form_for @content, :url => {:action => "update", :controller=>"contents"} do |f| %>
       <p>type</p>
       <%= f.select(:content_type, ContentType.all.map{|t|t.name}, 
       { include_blank: 'please select'}, 
       { :class => 'choose_the_content_type' }) %>
       <p>text</p>
       <%= f.text_field :line%>
+      <%#= link_to("Finished","/parts/index")%>
       <%= f.submit%>
     <%end%>
   </div>

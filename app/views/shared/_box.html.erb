@@ -12,6 +12,8 @@
     <%= content.line%>
   <%elsif content.content_type == 4%>
     <h1><%= content.line%></h1>
+  <%elsif content.content_type == 5%>
+    <pre class="prettyprint"><%= content.line%></pre>
   <%end%>
 <% end%>
 <div >

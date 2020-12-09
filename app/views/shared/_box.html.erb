@@ -13,8 +13,12 @@
   <%elsif content.content_type == 4%>
     <h1><%= content.line%></h1>
   <%elsif content.content_type == 5%>
-    <pre class="prettyprint"><%= content.line%></pre>
-  <%end%>
+    <div class="text-fluid">
+      <pre class="pre-scrollable">
+       <pre class="prettyprint"><%= content.line%></pre>
+    </pre>
+  </div>
+<%end%>
 <% end%>
 <div >
   <%if Image.where(box_id: bid).present?%>

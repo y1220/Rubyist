@@ -32,6 +32,10 @@ Rails.application.routes.draw do
   get 'parts/p1'
   get 'parts/p2'
   get 'parts/p3'
+  get 'parts/p4'
+  get 'parts/p5'
+  get 'parts/p6'
+  get 'parts/p7'
   #[1..7].each{|x|
   #get "chapters/p1_c#{x}"
   #}

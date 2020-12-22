@@ -1,0 +1,14 @@
+<div class="main posts-index">
+  <div class="container">
+    <h2>Part4</h2>
+    <p>Ruby dynamics :)</p>
+    <%cnt=17%>
+    <% @chapters4.each do |chapter|%>
+      <div class="posts-index-item">
+        <%= link_to("chapter#{cnt.to_s}: #{chapter.name}","/chapters/p4/c#{cnt.to_i}")%>
+        <%cnt+= 1%>
+      </div>
+    <% end%>
+    <%= render "shared/form"%>
+  </div>
+</div>

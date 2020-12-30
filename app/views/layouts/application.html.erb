@@ -1,7 +1,8 @@
+<%# provide(:title, 'Home') %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rubyist</title>
+    <title>Rubyist <%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>

@@ -39,4 +39,14 @@ class PartsController < ApplicationController
     @chapters7=Chapter.where(part_id: 7)
 
   end
+  def p8
+    @task = Task.new
+    @chapters8=Chapter.where(part_id: 8)
+
+  end
+  def p9
+    @task = Task.new
+    @chapters9=Chapter.where(part_id: 9)
+
+  end
 end
